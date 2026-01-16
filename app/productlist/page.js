@@ -3,9 +3,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts } from '@/lib/reducer/dataSlice';
 import ProductTable from '@/components/ProductTable';
+import { useRouter } from 'next/navigation';
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const { products, loading } = useSelector((state) => state.data);
 
   useEffect(() => {
@@ -26,7 +28,9 @@ const ProductsPage = () => {
       {loading ? (
         <p className="text-white text-center mt-20 text-xl">Chargement...</p>
       ) : (
+        <div onClick={() => router.push('/detailproduct')}>
         <ProductTable products={products} />
+        </div>
       )}
     </div>
   );
