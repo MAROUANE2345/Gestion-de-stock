@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": "460a",
+      "nom": "test",
+      "qte": "9",
+      "prix": "10",
+      "categorie": "TEST",
+      "description": "teeeeeeeeeest"
+    },
+    {
+      "id": "da96",
+      "nom": "test 2",
+      "qte": "3",
+      "prix": "400",
+      "categorie": "ELECTRO",
+      "description": "DDDDDD"
+    }
+  ]
+}
