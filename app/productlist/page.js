@@ -28,9 +28,9 @@ const ProductsPage = () => {
       {loading ? (
         <p className="text-white text-center mt-20 text-xl">Chargement...</p>
       ) : (
-        <div onClick={() => router.push('/detailproduct')}>
+      
         <ProductTable products={products} />
-        </div>
+        
       )}
     </div>
   );

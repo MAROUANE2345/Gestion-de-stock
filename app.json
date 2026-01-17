@@ -1,12 +1,67 @@
 {
   "products": [
     {
-      "id": "460a",
-      "nom": "test",
-      "qte": "9",
+      "id": "4d95",
+      "nom": "P1",
+      "qte": "20",
+      "prix": "150",
+      "categorie": "Électronique",
+      "description": "CKDOCKDOCKDOCK",
+      "vendus": 10
+    },
+    {
+      "id": "24a3",
+      "nom": "P2",
+      "qte": "14",
+      "prix": "200",
+      "categorie": "Alimentation",
+      "description": "KCOXKCOCKSOCSKCOKSOCK",
+      "vendus": 6
+    },
+    {
+      "id": "9242",
+      "nom": "P3",
+      "qte": "15",
+      "prix": "100",
+      "categorie": "Vêtements",
+      "description": "KOCKXOCKXCOKXCOKXCXOCK",
+      "vendus": 5
+    },
+    {
+      "id": "21a8",
+      "nom": "P4",
+      "qte": "50",
+      "prix": "400",
+      "categorie": "Maison",
+      "description": "COKDOCKDCODKCODKCDOCKDOCK",
+      "vendus": 0
+    },
+    {
+      "id": "8bc1",
+      "nom": "P5",
+      "qte": "50",
+      "prix": "300",
+      "categorie": "Électronique",
+      "description": "KOCKCXOKCXOCKXOCKXOCKXCOXKCOKXOCK",
+      "vendus": 0
+    },
+    {
+      "id": "aa73",
+      "nom": "P6",
+      "qte": "17",
       "prix": "1000",
-      "categorie": "TEST",
-      "description": "teeeeeeeeeest"
+      "categorie": "Maison",
+      "description": "KCOXKCXCOKXCOXKCOXKCOXCKXOCK",
+      "vendus": 3
+    },
+    {
+      "id": "dc07",
+      "nom": "P7",
+      "qte": "10",
+      "prix": "120",
+      "categorie": "Maison",
+      "description": "KOXCKXOCKXCOKXCOXKCOXCK",
+      "vendus": 1
     }
   ]
 }

@@ -19,7 +19,7 @@ const Page = () => {
 
   // ================= VALIDATION FUNCTION =================
   const validateProduct = () => {
-    let valid = true;
+    let valid = true;     
     const newErrors = {};
 
     if (!product.nom.trim()) {
@@ -145,11 +145,11 @@ const Page = () => {
                 onChange={(e) => setProduct({ ...product, categorie: e.target.value })}
                 className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-900 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition duration-200 outline-none"
               >
-                <option value="">Sélectionnez une catégorie</option>
-                <option value="Électronique">Électronique</option>
+                <option value="">Choose a category</option>
+                <option value="Électronique">Électronic</option>
                 <option value="Alimentation">Alimentation</option>
-                <option value="Vêtements">Vêtements</option>
-                <option value="Maison">Maison</option>
+                <option value="Vêtements">Clothes</option>
+                <option value="Maison">House</option>
               </select>
               {errors.categorie && <p className="text-red-500 text-sm">{errors.categorie}</p>}
             </div>

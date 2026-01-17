@@ -3,15 +3,16 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteProduct } from '@/lib/reducer/dataSlice'; // make sure this thunk exists
 import { toast } from 'sonner';
-
+import { useRouter } from 'next/navigation';
 const ProductDelete = ({ id, onClose }) => {
     const dispatch = useDispatch();
-
+    const router = useRouter();
     const deleteThis = async () => {
         try {
             await dispatch(deleteProduct(id)).unwrap(); // unwrap to catch errors
             toast.success('Produit supprimé avec succès');
             onClose(); // close popup after deletion
+            router.push('/productlist')
         } catch (error) {
             toast.error('Erreur lors de la suppression');
         }
