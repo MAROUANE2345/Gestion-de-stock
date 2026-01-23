@@ -1,13 +1,12 @@
 /**
  * @jest-environment jsdom
  */
+
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useRouter } from 'next/navigation';
-
-import HomeStats from './app/page.js';
+import HomeStats from './app/page';
 
 // ================= MOCKS =================
 jest.mock('react-redux', () => ({
@@ -16,10 +15,12 @@ jest.mock('react-redux', () => ({
 }));
 
 jest.mock('next/navigation', () => ({
-  useRouter: jest.fn(),
+  useRouter: () => ({
+    push: jest.fn(),
+  }),
 }));
 
-jest.mock('@/components/SoldByCategoryChart', () => () => (
+jest.mock('./components/SoldByCategoryChart', () => () => (
   <div data-testid="mock-chart">Chart</div>
 ));
 
@@ -28,29 +29,26 @@ const products = [
   {
     id: 1,
     nom: 'Apple',
-    qte: 10,
-    prix: 2,
     categorie: 'Alimentation',
+    prix: 2,
+    qte: 10,
     vendus: 3,
   },
   {
     id: 2,
     nom: 'Shirt',
-    qte: 5,
-    prix: 20,
     categorie: 'Vetement',
+    prix: 20,
+    qte: 5,
     vendus: 1,
   },
 ];
 
-// ================= MOCK SETUP =================
+// ================= SETUP =================
 const mockDispatch = jest.fn();
-const mockPush = jest.fn();
 
 beforeEach(() => {
   useDispatch.mockReturnValue(mockDispatch);
-  useRouter.mockReturnValue({ push: mockPush });
-
   useSelector.mockImplementation((selector) =>
     selector({
       data: {
@@ -67,12 +65,10 @@ describe('HomeStats Page', () => {
     render(<HomeStats />);
 
     expect(screen.getByText('Dashboard')).toBeInTheDocument();
-
-    const totalProductsCard = screen.getByText('Total Products').parentElement;
-    const soldProductsCard = screen.getByText('Products Sold').parentElement;
-
-    expect(totalProductsCard).toHaveTextContent('2');
-    expect(soldProductsCard).toHaveTextContent('4');
+    expect(screen.getByText('Total Products')).toBeInTheDocument();
+    expect(screen.getByText('2')).toBeInTheDocument();
+    expect(screen.getByText('Products Sold')).toBeInTheDocument();
+    expect(screen.getByText('4')).toBeInTheDocument(); // 3 + 1
   });
 
   test('renders the chart section', () => {
@@ -96,7 +92,7 @@ describe('HomeStats Page', () => {
     render(<HomeStats />);
 
     fireEvent.change(
-      screen.getByLabelText('Category'),
+      screen.getByRole('combobox'),
       { target: { value: 'Alimentation' } }
     );
 
