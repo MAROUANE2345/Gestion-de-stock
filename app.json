@@ -1,15 +1,6 @@
 {
   "products": [
     {
-      "id": "4d95",
-      "nom": "P1",
-      "qte": "20",
-      "prix": "150",
-      "categorie": "Électronique",
-      "description": "CKDOCKDOCKDOCK",
-      "vendus": 10
-    },
-    {
       "id": "24a3",
       "nom": "P2",
       "qte": "14",
@@ -17,15 +8,6 @@
       "categorie": "Alimentation",
       "description": "KCOXKCOCKSOCSKCOKSOCK",
       "vendus": 6
-    },
-    {
-      "id": "9242",
-      "nom": "P3",
-      "qte": "15",
-      "prix": "100",
-      "categorie": "Vêtements",
-      "description": "KOCKXOCKXCOKXCOKXCXOCK",
-      "vendus": 5
     },
     {
       "id": "21a8",
@@ -62,6 +44,24 @@
       "categorie": "Maison",
       "description": "KOXCKXOCKXCOKXCOXKCOXCK",
       "vendus": 1
+    },
+    {
+      "id": "6b22",
+      "nom": "hhaaacho",
+      "qte": "27",
+      "prix": "10",
+      "categorie": "Vêtements",
+      "description": "DJDNCDJCNDJCDNCJDNDJCN",
+      "vendus": 3
+    },
+    {
+      "id": "f884",
+      "nom": "Electro",
+      "qte": "0",
+      "prix": "100",
+      "categorie": "Électronique",
+      "description": "JICJDICJDCIJDICDJCIDCIJ",
+      "vendus": 3
     }
   ]
 }
